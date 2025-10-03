@@ -1,0 +1,229 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CureTrack — Support</title>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+  <meta name="description" content="CureTrack support page — contact, bug reporting, FAQ and privacy policy." />
+  <style>
+    :root{
+      --accent:#2297ca;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --radius:10px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:#0b1720}
+    .wrap{max-width:980px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#087b6b);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;
+      box-shadow:0 6px 20px rgba(15,23,42,0.06);
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0 0}
+
+      .banner-header {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .banner-img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+     h1 {
+      font-size: 3rem;
+      margin-bottom: 5px;
+      text-align: center;
+      color: #2297ca; /* Added text color */
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #d9d9d9;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+    @media(min-width:900px){.grid{grid-template-columns: 1fr 360px}}
+
+    .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 1px 0 rgba(15,23,42,0.04);border:1px solid rgba(15,23,42,0.04)}
+    h2{margin:0 0 10px 0;font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
+
+    .contact-list{display:flex;flex-direction:column;gap:10px}
+    .contact-item{display:flex;gap:12px;align-items:flex-start}
+    .icon{width:40px;height:40;border-radius:8px;background:#eefaf7;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--accent);font-size:18px}
+    a.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    .muted a{color:var(--accent);text-decoration:underline}
+
+    form .row{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+    input, textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef0;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .help-footer{font-size:13px;color:var(--muted);margin-top:8px}
+
+    /* FAQ */
+    .faq-item{border-top:1px solid #f1f5f6;padding:12px 0}
+    .faq-q{font-weight:600}
+    .legal{font-size:13px;color:var(--muted);margin-top:12px}
+
+    footer{text-align:center;margin-top:20px;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+
+
+    <div class="grid" role="region" aria-label="Support content">
+      <!-- Left column -->
+      <section class="card" aria-labelledby="support-heading">
+        <h2 id="support-heading">Get help</h2>
+        <p class="muted">If you need assistance with CureTrack, please use one of the channels below. For urgent site/mission-critical issues, mention "URGENT" in the subject.</p>
+
+        <div style="height:12px"></div>
+
+        <div class="contact-list" aria-hidden="false">
+          <div class="contact-item">
+            <div class="icon">@</div>
+            <div>
+              <div style="font-weight:600">Email</div>
+              <div class="muted">adnancuretrack@gmail.com</div>
+              <div class="help-footer">Click to open your email client.</div>
+              <div style="margin-top:8px">
+                <a class="btn" href="mailto:adnancuretrack@gmail.com?subject=Cure%20Track%20Support%20Request">Email Support</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">🕘</div>
+            <div>
+              <div style="font-weight:600">Support hours</div>
+              <div class="muted">Mon–Fri, 9:00 – 18:00 (local time)</div>
+              <div class="help-footer">We aim to respond within 24 business hours.</div>
+            </div>
+          </div>
+
+        
+        </div>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid #f1f5f6" />
+
+        <h2>Report a bug / Send logs</h2>
+        <p class="muted">Use the quick report form below — this will open your email client pre-filled with the details. Please include device model, Android version and a short description of the issue.</p>
+
+        <form id="bugForm" onsubmit="return sendMail()" aria-label="Report a bug">
+          <div class="row">
+            <label class="muted" for="rep-type">Issue type</label>
+            <select id="rep-type" required>
+              <option>Bug / Crash</option>
+              <option>Bluetooth pairing</option>
+              <option>Sensor readings</option>
+              <option>Data export</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <label class="muted" for="device">Device model & Android version</label>
+            <input id="device" type="text" placeholder="e.g., Samsung S23, Android 14" required />
+          </div>
+
+          <div class="row">
+            <label class="muted" for="desc">Short description</label>
+            <textarea id="desc" placeholder="Describe the issue and steps to reproduce" required></textarea>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn" type="submit">Send report</button>
+          </div>
+
+          <p class="help-footer">Tip: Attach screenshots or logs by replying to the support email after it opens.</p>
+        </form>
+
+        <div style="height:14px"></div>
+
+        <h2>Privacy & Terms</h2>
+        <p class="muted">View our privacy policy: <a class="muted" href="https://dsfdsdf779.github.io/cureTrack_privacy/index.html" target="_blank" rel="noopener">https://dsfdsdf779.github.io/cureTrack_privacy/index.html</a></p>
+        <p class="legal">By contacting support you agree to share diagnostic information needed to investigate the issue. For legal or data requests, please include "Data Request" in the subject.</p>
+      </section>
+
+      <!-- Right column -->
+      <aside class="card" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Quick FAQ</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">Which Bluetooth devices are supported?</div>
+          <div class="muted">CureTrack supports Bluetooth LE sensors that follow the documented temperature profile. For an up-to-date list, visit our website or contact support.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How long does monitoring run?</div>
+          <div class="muted">The app is designed to continue logging readings for up to 7 days as configured in the sensor settings.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Can I export temperature logs?</div>
+          <div class="muted">Yes — use the Export button in the History screen to save CSV files. If you face issues, send us the logs and we’ll help.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">App compatibility</div>
+          <div class="muted">Android 10+ and iOS 51+ recommended. Some older devices may have Bluetooth limitations.</div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <h2>Emergency / On-site support</h2>
+        <p class="muted">If you have a safety-critical issue on-site, call our emergency line: <strong>+966 59 951 1586</strong> (if you have an assigned account manager, contact them directly).</p>
+
+        <div style="height:12px"></div>
+
+        <h2>Developer contact</h2>
+        <p class="muted">For business or developer inquiries: <a href="mailto:adnancuretrack@gmail.com">adnancuretrack@gmail.com</a></p>
+      </aside>
+    </div>
+
+    <footer>
+      <div>© CureTrack</div>
+      <div style="margin-top:6px"><a href="https://dsfdsdf779.github.io/cureTrack_privacy/index.html" target="_blank" rel="noopener" class="muted">Privacy Policy</a> · <span class="muted">Version 1.0</span></div>
+    </footer>
+  </main>
+
+  <script>
+    // Open mail client with prefilled template
+    function sendMail(){
+      const type = encodeURIComponent(document.getElementById('rep-type').value);
+      const device = encodeURIComponent(document.getElementById('device').value);
+      const desc = encodeURIComponent(document.getElementById('desc').value);
+
+      const subject = encodeURIComponent('CureTrack Support: ' + type);
+      let body = '';
+      body += 'Issue type: ' + type + '%0D%0A';
+      body += 'Device: ' + device + '%0D%0A';
+      body += 'Description:%0D%0A' + desc + '%0D%0A%0D%0A';
+      body += 'App version: %0D%0A';
+      body += 'Sensor model: %0D%0A';
+      body += 'Logs / screenshots: (attach after mail opens)';
+
+      const mailto = 'mailto:adnancuretrack@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+
+      // Try to open mail client
+      window.location.href = mailto;
+      return false; // prevent default
+    }
+
+    
+  </script>
+</body>
+</html>
